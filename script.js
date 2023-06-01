@@ -25,6 +25,7 @@ let colorsForUse = [
 window.onload = () => {
   makeGrids(currentSize);
   setColorPicker();
+
   paintingArea.addEventListener('mousedown', (e) => {
     e.preventDefault();
     isPainting = true;
@@ -33,6 +34,11 @@ window.onload = () => {
     e.preventDefault();
     isPainting = false;
   });
+  colorInput.addEventListener('keydown', e => {
+    if (e.key === 'Enter') {
+      setCustomColorBox();
+    }
+  })
 }
 
 function makeGrids(size) {
